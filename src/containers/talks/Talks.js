@@ -4,7 +4,7 @@ import { talkSection } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
-import calendlyLogo from "../../assets/images/avatar.jpeg";
+import calendlyLogo from "../../assets/images/avatar.png";
 
 export default function Talks() {
   const { isDark } = useContext(StyleContext);
