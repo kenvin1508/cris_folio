@@ -42,7 +42,7 @@ export default function Greeting() {
                 <Button text="Contact me" href="#contact" />
                 {greeting.resumeLink && (
                   <a
-                    href="/resume.pdf"
+                    href="/cv-template.pdf"
                     download="Resume.pdf"
                     className="download-link-button"
                   >
