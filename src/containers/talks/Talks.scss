@@ -13,7 +13,7 @@
 }
 
 .subTitle {
-  color: $subTitle;
+  color: $buttonHover;
 }
 
 @media (max-width: 768px) {
@@ -21,9 +21,29 @@
     font-size: 30px;
     text-align: center;
   }
+
   .talk-header-subtitle {
     font-size: 16px;
     line-height: normal;
     text-align: center;
   }
+}
+
+.talk-subtitle-with-image {
+  display: flex;
+  align-items: center; // căn avatar và text cùng hàng dọc
+  gap: 16px; // khoảng cách giữa avatar và subtitle
+  margin-top: 16px;
+}
+
+.talk-subtitle-avatar {
+  width: 600px; // tăng size tùy ý
+  height: 600px;
+  object-fit: cover; // đảm bảo không méo hình
+  border-radius: 5%;
+  margin-right: 20px;
+}
+
+.talk-subtitle-with-image .talk-header-subtitle {
+  color: black;
 }

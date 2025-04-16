@@ -1,5 +1,7 @@
+/* Import các màu sắc global (nếu có) */
 @import "../../_globalColor";
 
+/* Cấu trúc chính */
 .skills-main-div {
   display: flex;
   width: 100%;
@@ -24,8 +26,30 @@
   font-size: 56px;
   font-weight: 400;
 }
+
 .subTitle {
-  color: $subTitle;
+  color: var(--subTitle-color);
+}
+
+/* Dark Mode */
+body.dark-mode .skills-heading {
+  color: var(--light-text-color); /* Màu văn bản cho dark mode */
+}
+
+body.dark-mode .subTitle {
+  color: var(--light-subTitle-color); /* Màu văn bản phụ cho dark mode */
+}
+
+body.dark-mode .skills-main-div {
+  background-color: var(--dark-bg-color); /* Màu nền cho dark mode */
+}
+
+body.dark-mode .skills-text-div {
+  color: var(--light-text-color); /* Màu chữ của phần text */
+}
+
+body.dark-mode .skills-image-div > img {
+  filter: brightness(0.7); /* Điều chỉnh độ sáng hình ảnh khi ở dark mode */
 }
 
 /* Media Query */
@@ -34,31 +58,37 @@
     font-size: 40px;
   }
 }
+
 @media (max-width: 768px) {
   .skills-heading {
     font-size: 30px;
     text-align: center;
   }
+  
   .greeting-text-p {
     font-size: 16px;
     line-height: normal;
   }
+  
   .skills-main-div {
     flex-direction: column;
   }
+
   .skills-text-div {
     margin-left: 0px;
     margin: 20px;
   }
+
   .skills-text {
     font-size: 16px;
   }
+
   .skills-text-subtitle {
     font-size: 16px;
     text-align: center;
   }
+
   .skills-image-div {
-    /* display: none; */
     order: 2;
   }
 }

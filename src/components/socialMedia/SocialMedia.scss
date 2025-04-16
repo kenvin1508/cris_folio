@@ -68,6 +68,11 @@
   background-color: $instagram;
 }
 
+.telegram i {
+  background-color: $telegram; // Thêm biến màu này vào _globalColor nếu chưa có
+}
+
+
 /* Hover Transition */
 .twitter i:hover,
 .google i:hover,
@@ -87,4 +92,20 @@
   .social-media-div {
     text-align: center;
   }
+}
+
+.calendly img.custom-icon {
+  height: 1.85rem;
+  width: 1.85rem;
+  border-radius: 2.6rem;
+  padding: 0.4rem;
+  background-color: $calendly; // như mấy icon khác
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  // Thêm margin
+  margin-left: 5px; // hoặc 0.5rem tùy thiết kế
+  margin-top: 5px; // điều chỉnh lên/xuống nhẹ
 }

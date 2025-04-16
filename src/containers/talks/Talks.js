@@ -1,12 +1,13 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import "./Talks.scss";
-import TalkCard from "../../components/talkCard/TalkCard";
-import {talkSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { talkSection } from "../../portfolio";
+import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
+import calendlyLogo from "../../assets/images/avatar.jpeg";
+
 export default function Talks() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
   if (!talkSection.display) {
     return null;
   }
@@ -15,30 +16,29 @@ export default function Talks() {
       <div className="main" id="talks">
         <div className="talk-header">
           <h1 className="talk-header-title">{talkSection.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode talk-header-subtitle"
-                : "subTitle talk-header-subtitle"
-            }
-          >
-            {talkSection.subtitle}
-          </p>
-          {talkSection.talks.map((talk, i) => {
-            return (
-              <TalkCard
-                key={i}
-                talkDetails={{
-                  title: talk.title,
-                  subtitle: talk.subtitle,
-                  slides_url: talk.slides_url,
-                  event_url: talk.event_url,
-                  image: talk.image,
-                  isDark
-                }}
-              />
-            );
-          })}
+
+          <div className="talk-subtitle-with-image">
+            <img
+              src={calendlyLogo}
+              alt="avatar"
+              className="talk-subtitle-avatar"
+            />
+            <div>
+              {talkSection.subtitle.split("\n\n").map((paragraph, index) => (
+                <p
+                  key={index}
+                  className={
+                    isDark
+                      ? "dark-mode talk-header-subtitle"
+                      : "talk-header-subtitle"
+                  }
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </Fade>

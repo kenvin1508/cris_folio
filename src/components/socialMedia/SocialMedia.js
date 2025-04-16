@@ -1,6 +1,8 @@
 import React from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import { socialMediaLinks } from "../../portfolio";
+
+import calendlyLogo from "../../assets/images/calendly_logos.png";
 
 export default function socialMedia() {
   if (!socialMediaLinks.display) {
@@ -127,6 +129,32 @@ export default function socialMedia() {
           <span></span>
         </a>
       ) : null}
+
+      {socialMediaLinks.telegram ? (
+        <a
+          href={socialMediaLinks.telegram}
+          className="icon-button telegram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-telegram-plane"></i>
+          <span></span>
+        </a>
+      ) : null}
+
+      {socialMediaLinks.calendly ? (
+        <a
+          href={socialMediaLinks.calendly}
+          className="icon-button calendly"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+       
+          <img src={calendlyLogo} alt="" className="custom-icon" />
+          <span></span>
+        </a>
+      ) : null}
+
     </div>
   );
 }
